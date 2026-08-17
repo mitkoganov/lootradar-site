@@ -1,0 +1,287 @@
+/* LootRadar — shared styles */
+:root {
+  --bg: #0b0d12;
+  --bg-elevated: #12151d;
+  --card: #171b26;
+  --card-border: #262b3a;
+  --text: #e7e9ee;
+  --text-dim: #9aa0b0;
+  --accent: #8b5cf6;
+  --accent-2: #ec4899;
+  --price: #22c55e;
+  --was-price: #6b7280;
+  --badge: #f59e0b;
+  --link: #a78bfa;
+  --max-width: 1160px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header.site-header {
+  background: linear-gradient(180deg, var(--bg-elevated), var(--bg));
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.logo span.dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent-2), var(--accent));
+  display: inline-block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.nav-links a { color: var(--text-dim); }
+.nav-links a:hover, .nav-links a.active { color: var(--text); text-decoration: none; }
+
+/* Hero */
+.hero {
+  padding: 56px 0 32px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 40px;
+  margin: 0 0 12px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  color: var(--text-dim);
+  font-size: 17px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.updated-note {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text-dim);
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+/* Section headers */
+.section {
+  padding: 40px 0;
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.section-head h2 {
+  font-size: 24px;
+  margin: 0;
+}
+.section-head a.see-all {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Deal grid + cards */
+.deal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.deal-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+.deal-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.deal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.deal-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.discount-badge {
+  flex-shrink: 0;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 4px 9px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.deal-meta {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.deal-flags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.flag {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  color: var(--badge);
+  border: 1px solid var(--card-border);
+}
+
+.deal-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: auto;
+}
+.deal-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--price);
+}
+.deal-was {
+  font-size: 14px;
+  color: var(--was-price);
+  text-decoration: line-through;
+}
+
+.deal-store {
+  font-size: 12.5px;
+  color: var(--text-dim);
+}
+
+.deal-cta {
+  display: inline-block;
+  text-align: center;
+  margin-top: 4px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 14px;
+}
+.deal-cta:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+/* Disclosure strip */
+.disclosure-strip {
+  font-size: 12.5px;
+  color: var(--text-dim);
+  background: var(--bg-elevated);
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Footer */
+footer.site-footer {
+  border-top: 1px solid var(--card-border);
+  padding: 32px 0 48px;
+  margin-top: 32px;
+  color: var(--text-dim);
+  font-size: 13.5px;
+}
+.footer-links {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+/* Content pages (about/privacy/disclosure) */
+.content-page {
+  padding: 48px 0 64px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.content-page h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.content-page h2 {
+  font-size: 20px;
+  margin-top: 32px;
+}
+.content-page p, .content-page li {
+  color: var(--text-dim);
+  font-size: 15.5px;
+}
+.content-page .updated {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .hero h1 { font-size: 30px; }
+  .nav-links { gap: 14px; font-size: 13px; }
+}
