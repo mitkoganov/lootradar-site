@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mitkoganov.github.io/lootradar-site/sitemap.xml
